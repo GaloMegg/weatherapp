@@ -1,0 +1,77 @@
+.actualCard__flex {
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  .actualCard {
+    border-radius: 16px;
+    width: 70%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(29, 40, 104, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 70vh;
+    padding: 1%;
+    .location {
+      width: 100%;
+      justify-content: space-around;
+      display: flex;
+      height: 4vh;
+      align-items: center;
+      color: #d4dfed;
+      .actualCard__city {
+        display: flex;
+        width: 30%;
+        align-items: center;
+        .slide-right {
+          border-radius: 16px;
+          -webkit-animation: slide-fwd-center 0.45s
+            cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            both;
+        }
+        .city {
+          width: 9%;
+          margin: 5%;
+        }
+      }
+    }
+    .actualCard__temp {
+      color: #d4dfed;
+    }
+    .actualCard__main {
+      color: #d4dfed;
+    }
+    .actualCard__description {
+      color: #d4dfed;
+    }
+  }
+}
+
+@-webkit-keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+    transform: translateZ(160px);
+  }
+}
+@keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+    transform: translateZ(160px);
+  }
+}

@@ -1,0 +1,35 @@
+.fiveHours__flex {
+  background-color: black;
+  color: #d4dfed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 3% 0% 0% 0%;
+  .fiveHours__gradient {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(29, 40, 104, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    width: 71%;
+    border-radius: 16px;
+    .hour {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 2%;
+    }
+  }
+}
+
+@media screen and (min-width: 524px) {
+  
+  .fiveHours__gradient{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
