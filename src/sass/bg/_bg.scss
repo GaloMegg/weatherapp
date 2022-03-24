@@ -1,0 +1,16 @@
+.container__bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container__bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+}

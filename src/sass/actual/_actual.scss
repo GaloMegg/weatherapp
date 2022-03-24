@@ -1,0 +1,68 @@
+.actual {
+  width: 45%;
+  height: 50%;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #ffffff;
+  border-radius: 80px;
+  // #region
+  background: linear-gradient(232deg, #00000013, #0c0c0c8c);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 40s ease infinite;
+  -moz-animation: AnimationName 40s ease infinite;
+  animation: AnimationName 40s ease infinite;
+  //#endregion
+  .actual__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    .actual__icon {
+      height: 10vh;
+    }
+  }
+  .actual__humidity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
+}

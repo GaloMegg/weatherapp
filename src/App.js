@@ -1,19 +1,12 @@
-import Actualcontainer from "./components/actual/Actualcontainer"
-import Context from "./components/context/context"
-
-import FiveHoursContainer from "./components/fivehours/FiveHoursContainer"
-import Nav from "./components/nav/Nav"
+import React from 'react'
+import Containermain from './components/Containermain'
 
 const App = () => {
-    return (
-        <div>
-            <Context>
-                <Nav />
-                <Actualcontainer />
-                <FiveHoursContainer />
-            </Context>
-        </div>
-    )
+  return (
+    <div>
+      <Containermain />
+    </div>  
+  )
 }
 
 export default App
