@@ -1,25 +1,55 @@
 import React, { useEffect, useState } from 'react'
 import Background from './Background'
+import Loader from './Loader'
 
 const Containermain = () => {
     const [loading, setLoading] = useState(true)
     const [weather, setWeather] = useState(null)
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(success)
+        navigator.geolocation.getCurrentPosition(success, error)
     }, [])
-    const success = (position) => {
+
+
+    function success(position) {
         const { latitude, longitude } = position.coords
-        req(latitude, longitude)
+        request(true, latitude, longitude)
     }
-    const req = async (lat, lon) => {
-        let req = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_apiKey}&units=metric`)
+    function error() {
+        let data = JSON.parse(localStorage.getItem('data'))
+        if (data) {
+            setWeather(data); setLoading(false)
+        } else {
+            getWeatherIP()
+        }
+    }
+    const getWeatherIP = async () => {
+        let req = await fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_apiKeyIP}`)
         let data = await req.json()
-        setWeather(data)
-        setLoading(false)
+        const { city } = data
+        request(false, city)
+    }
+    const request = async (a, b, c) => {
+        let url
+        if (a) {
+            url = `https://api.openweathermap.org/data/2.5/weather?lat=${b}&lon=${c}&appid=${process.env.REACT_APP_apiKey}&units=metric`
+        }
+        else {
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${b}&appid=${process.env.REACT_APP_apiKey}&units=metric`
+        }
+        try {
+            let req = await fetch(url)
+            let data = await req.json()
+            setWeather(data)
+            setLoading(false)
+            localStorage.setItem('data', JSON.stringify(data))
+        }
+        catch {
+            error()
+        }
     }
     return (
         <div>
-            {loading || <Background weather={weather} />}
+            {loading ? <Loader /> : <Background weather={weather} />}
         </div>
     )
 }

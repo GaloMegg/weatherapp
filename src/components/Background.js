@@ -1,6 +1,5 @@
 import React from 'react'
 import Data from './Data'
-import Forecast from './Forecast'
 //#region 
 import Thunderstorm from "../assets/bgImg/thunderstorm.jpg"
 import Drizzle from "../assets/bgImg/drizzle.jpg"
@@ -25,7 +24,6 @@ const Background = ({ weather }) => {
         <div className="container__bg">
             <img src={imgSrc} alt="background" className='container__bg-img' />
             <Data weather={weather} />
-            <Forecast />|
         </div >
     )
 }

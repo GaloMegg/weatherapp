@@ -2,16 +2,17 @@ import React from 'react'
 import Time from './time/Time'
 
 const Data = ({ weather }) => {
-
-
   return (
     <div className='actual'>
+      <a href='/' >
+        <svg xmlns="http://www.w3.org/2000/svg" className='actual__refresher' viewBox="0 0 24 24" width="24px" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z" /></svg>
+      </a>
       <h1 className='actual__city'>{weather.name}, {weather.sys.country}</h1>
       {/* nuevo componente data */}
       <h3 className='actual__date'>
         <Time />
       </h3>
-      <div className='actual__flex'>
+      <div className='actual__flex-icon'>
         <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" className='actual__icon' />
         <p className='actual__temp'>{weather.main.temp}°C</p>
       </div>
