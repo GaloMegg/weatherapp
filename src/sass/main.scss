@@ -22,10 +22,13 @@ p,
 blockquote,
 th,
 td {
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: 'Open Sans Condensed', sans-serif;
   padding: 0;
   margin: 0;
   letter-spacing: 0.09rem;
+  text-align: center;
 }
 html {
   &::-webkit-scrollbar {

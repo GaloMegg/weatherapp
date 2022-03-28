@@ -8,8 +8,11 @@ const Time = () => {
     }, 10000);
     return (
         <>
-            {date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}
-            {date.getHours()}:{date.getMinutes()}
+            <p>{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</p>
+            <p>
+                {date.getHours()}:{date.getMinutes()}
+            </p>
+
         </>
     )
 }

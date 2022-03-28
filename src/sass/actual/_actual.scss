@@ -1,6 +1,6 @@
 .actual {
-  width: 45%;
-  height: 50%;
+  width: 75%;
+  height: 61%;
   z-index: 2;
   color: white;
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-around;
   border: 2px solid #ffffff;
-  border-radius: 80px;
+  border-radius: 18px;
   .actual__refresher {
     -webkit-animation: spin 10s linear infinite;
     -moz-animation: spin 10s linear infinite;
@@ -39,6 +39,9 @@
     .actual__icon {
       height: 10vh;
     }
+  }
+  .actual__city {
+    font-size: 1.2rem;
   }
   .actual__humidity {
     display: flex;
@@ -95,5 +98,20 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .actual {
+    width: 40%;
+    height: 55%;
+    border-radius: 80px;
+    
+  .actual__city {
+    font-size: 1.8rem;
+  }
+  p{
+    font-size: 1.2rem;
+  }
   }
 }
