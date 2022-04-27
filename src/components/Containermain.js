@@ -15,12 +15,7 @@ const Containermain = () => {
         request(true, latitude, longitude)
     }
     function error() {
-        let data = JSON.parse(localStorage.getItem('data'))
-        if (data) {
-            setWeather(data); setLoading(false)
-        } else {
-            getWeatherIP()
-        }
+        getWeatherIP()
     }
     const getWeatherIP = async () => {
         let req = await fetch(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_apiKeyIP}`)
@@ -41,7 +36,6 @@ const Containermain = () => {
             let data = await req.json()
             setWeather(data)
             setLoading(false)
-            localStorage.setItem('data', JSON.stringify(data))
         }
         catch {
             error()
